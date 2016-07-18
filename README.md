@@ -1,6 +1,7 @@
-# The Bark Partner API
+# Bark.us Partner API
 
-As a Bark Partner, please use the following API to submit messages.
+This is the official documentation for the Bark.us Partner
+API.
 
 
 ## Making a request
@@ -32,7 +33,7 @@ communicating with the API:
 2. Include the query string param `token` (ie.
    `https://partner.bark.us/api/v1/activities?token=mysecrettoken`)
 
-   ### No XML, just JSON
+### No XML, just JSON
 
 We only support JSON for serialization of data. Our format is to have no root element and we use snake\_case to describe attribute keys. This means you have to send `Content-Type: application/json; charset=utf-8` when you're POSTing data to Bark.
 
