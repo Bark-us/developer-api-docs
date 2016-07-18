@@ -1,5 +1,7 @@
 # Bark.us Partner API
 
+![Bark Logo](https://www.bark.us/bark-logo-sm.png)
+
 This is the official documentation for the Bark.us Partner
 API.
 
