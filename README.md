@@ -50,7 +50,7 @@ detailing the error. For instance:
 ```json
 {
   "success": false,
-  "message": Please provide a valid message
+  "message": "Please provide a valid message"
 }
 ```
 
