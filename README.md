@@ -67,7 +67,7 @@ We recommend baking 429 response handling in to your HTTP handling at a low leve
 
 API endpoints
 -------------
-- [Scoring](https://github.com/Bark-us/partner-api-docs/blob/master/score.md)
+- [Scoring](https://github.com/Bark-us/partner-api-docs/blob/master/scoring.md)
 
 Support
 -------
