@@ -1,87 +1,78 @@
-# Bark.us Partner API
+The Bark.us Partner API
+=======================
 
 ![Bark Logo](https://www.bark.us/bark-logo-sm.png)
 
-This is the official documentation for the Bark.us Partner
-API.
+Welcome to the Bark.us Partner API. Looking to get messages scored for cyberbullying, profanity and sentiment? You've come to the right
+place!
 
+Making a request
+----------------
 
-## Making a request
-
-All URLs start with `https://partner.bark.us/api/v1/`. **SSL only**. If we change the API in backward-incompatible ways, we'll bump the version marker and maintain stable support for the old URLs.
+All URLs start with `https://partner.bark.us/api/v1/`. **HTTPS only**. If we change the API in backward-incompatible ways, we'll bump the version marker and maintain stable support for the old URLs.
 
 Please include the `Content-Type` header and the JSON data:
 
 ```shell
-curl \
--H 'Content-Type: application/json; charset=utf-8' \
--H 'X-Token-Auth: mysecrettoken' \
--d "{ \"message\": \"Sample message\" }" \
-https://partner.bark.us/api/v1/messages
+curl -H 'Content-Type: application/json; charset=utf-8' -H 'X-Token-Auth: mysecrettoken' -d "{ \"message\": \"Sample message\" }" https://partner.bark.us/api/v1/score
 ```
 
-### Params
+Throughout this guide we've included "Copy as cURL" examples. If you'd like to try this out in your shell, export the following ENV variable:
 
-`message` - message text (required)
+``` shell
+export TOKEN=[paste token here]
+```
 
+Using the same shell session, you should be able to easily copy + paste any
+example from the docs.
 
-### Authentication
+Authentication
+--------------
 
-You'll be given an integration token for which you can supply in 2 ways when
+You'll be given an access token for which you can supply in 2 ways when
 communicating with the API:
 
-1. Provide the `X-Token-Auth` header with the value being your integration
-   token
-2. Include the query string param `token` (ie.
-   `https://partner.bark.us/api/v1/messages?token=mysecrettoken`)
+1. Provide the `X-Token-Auth` header with the value being your integration token
+2. Include the query string param `token` (ie. `https://partner.bark.us/api/v1/score?token=mysecrettoken`)
 
-### No XML, just JSON
+JSON Only
+---------
 
 We only support JSON for serialization of data. Our format is to have no root element and we use snake\_case to describe attribute keys. This means you have to send `Content-Type: application/json; charset=utf-8` when you're POSTing data to Bark.
 
+You'll receive a `415 Unsupported Media Type` response code if you attempt to use another content type.
 
-### Handling errors
+Handling errors
+---------------
 
 If Bark is having trouble, you might see a 5xx error. `500` means the app is entirely down, but you might also see `502 Bad Gateway`, `503 Service Unavailable`, or `504 Gateway Timeout`. It's your responsibility in all of these cases to retry your request later.
 
-A typical error response will include the keys `success` and `message`
-detailing the error. For instance:
+A typical error response will include the keys `success` and `error` detailing the error. For instance:
 
 ```json
 {
   "success": false,
-  "message": "Please provide a valid message"
+  "error": "Please provide a valid message"
 }
 ```
 
-## Messages API
+Rate limiting
+-------------
 
-### Analyze a message
+You can perform up to 10 requests per 2 second period from the same IP address. If you exceed this limit,
+you'll get a [429 Too Many Requests](http://tools.ietf.org/html/draft-nottingham-http-new-status-02#section-4)
+response for subsequent requests.
 
-* `POST /messages` will provide the rating for a single message
+We recommend baking 429 response handling in to your HTTP handling at a low level so your integration gracefully and automatically handles retries.
 
-```json
-{
-  "message": "Sample message"
-}
-```
+API endpoints
+-------------
+- [Scoring](https://github.com/Bark-us/partner-api-docs/blob/master/score.md)
 
-This will return `200 Success`, with the response body detailed below.
+Support
+-------
 
-### Responses
+If you have a specific feature request or if you found a bug, [please open a GitHub issue](https://github.com/Bark-us/partner-api-docs/issues). We encourage forking these docs for local reference, and will happily accept pull request with improvements.
 
-```json
-{
-  "success": true,
-  "abusive": true,
-  "cyberbullying": {
-    "abusive": true
-  },
-  "profanity": {
-    "abusive": false
-  },
-  "sentiment": {
-    "polarity": "NEUTRAL"
-  }
-}
-```
+Alternatively, you can reach us via email at <help@bark.us>.
+
