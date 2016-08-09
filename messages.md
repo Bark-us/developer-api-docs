@@ -1,4 +1,4 @@
-Scoring
+Messages
 =======
 
 Endpoints:
@@ -8,7 +8,7 @@ Endpoints:
 Score a message
 ---------------
 
-* `POST /score` will provide the score for a single message
+* `POST /messages` will provide the score for a single message
 
 **Required parameters**:
 
@@ -27,7 +27,7 @@ This endpoint will return `200 Success` with the JSON representation of the scor
 ###### Copy as cURL
 
 ``` shell
-curl -s -H "Content-Type: application/json" -d "{ \"message\": \"I hate you\" }" https://partner.bark.us/api/v1/score?token=$TOKEN
+curl -s -H "Content-Type: application/json" -d "{ \"message\": \"I hate you\" }" https://partner.bark.us/api/v1/messages?token=$TOKEN
 ```
 
 ###### Example JSON REsponse

@@ -14,7 +14,7 @@ All URLs start with `https://partner.bark.us/api/v1/`. **HTTPS only**. If we cha
 Please include the `Content-Type` header and the JSON data:
 
 ```shell
-curl -H 'Content-Type: application/json; charset=utf-8' -H 'X-Token-Auth: mysecrettoken' -d "{ \"message\": \"Sample message\" }" https://partner.bark.us/api/v1/score
+curl -H 'Content-Type: application/json; charset=utf-8' -H 'X-Token-Auth: mysecrettoken' -d "{ \"message\": \"Sample message\" }" https://partner.bark.us/api/v1/messages
 ```
 
 Throughout this guide we've included "Copy as cURL" examples. If you'd like to try this out in your shell, export the following ENV variable:
@@ -33,7 +33,7 @@ You'll be given an access token for which you can supply in 2 ways when
 communicating with the API:
 
 1. Provide the `X-Token-Auth` header with the value being your integration token
-2. Include the query string param `token` (ie. `https://partner.bark.us/api/v1/score?token=mysecrettoken`)
+2. Include the query string param `token` (ie. `https://partner.bark.us/api/v1/messages?token=mysecrettoken`)
 
 JSON Only
 ---------
@@ -67,7 +67,7 @@ We recommend baking 429 response handling in to your HTTP handling at a low leve
 
 API endpoints
 -------------
-- [Scoring](https://github.com/Bark-us/partner-api-docs/blob/master/scoring.md)
+- [Messages](https://github.com/Bark-us/partner-api-docs/blob/master/messages.md)
 
 Support
 -------
