@@ -35,6 +35,12 @@ communicating with the API:
 1. Provide the `X-Token-Auth` header with the value being your integration token
 2. Include the query string param `token` (ie. `https://partner.bark.us/api/v1/messages?token=mysecrettoken`)
 
+English Only (for now)
+---------
+
+We currently only support English messages. In the future, we will be
+supporting additional languages and will update the documentation at that time.
+
 JSON Only
 ---------
 
