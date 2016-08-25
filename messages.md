@@ -52,7 +52,7 @@ curl -s -H "Content-Type: application/json" -d "{ \"message\": \"I hate you\" }"
 }
 ```
 
-- `success` defines the overall success of the request. If there's an errors,
+- `success` defines the overall success of the request. If there's an error,
     `success` will be `false` and an `error` will accompany the response (see
     [Handling
     Errors](https://github.com/Bark-us/partner-api-docs#handling-errors) for an
@@ -63,7 +63,9 @@ curl -s -H "Content-Type: application/json" -d "{ \"message\": \"I hate you\" }"
     `message` contents were positive for that feature (ie. if `abusive` is
     `true` within the `cyberbullying` block, the message was found to be
     cyberbullying)
-- `likelihood` values can be `VERY_UNLIKELY`, `UNLIKELY`,`NEUTRAL`, `LIKELY`, `VERY_LIKELY` (same values for the `polarity` attribute in `sentiment`)
+- `likelihood` values can be `VERY_UNLIKELY`, `UNLIKELY`,`NEUTRAL`, `LIKELY`, `VERY_LIKELY` 
+- `polarity` values can be `VERY_NEGATIVE`, `NEGATIVE`, `NEUTRAL`, `POSITIVE`, `VERY_POSITIVE`
 - `severity` in the `profanity` block is an `integer` from `0` (no profanity)
     to `4` (severe profanity)
+- `context` in the `profanity` block is whether the profanity found requires context to be considered profanity
 
