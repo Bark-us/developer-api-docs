@@ -30,7 +30,7 @@ This endpoint will return `200 Success` with the JSON representation of the scor
 curl -s -H "Content-Type: application/json" -d "{ \"message\": \"I hate you\" }" https://partner.bark.us/api/v1/messages?token=$TOKEN
 ```
 
-###### Example JSON REsponse
+###### Example JSON Response
 
 ```json
 {
