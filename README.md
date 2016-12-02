@@ -82,3 +82,7 @@ If you have a specific feature request or if you found a bug, [please open a Git
 
 Alternatively, you can reach us via email at <help@bark.us>.
 
+Unofficial Wrappers
+-------------------
+
+* [PyBark](https://github.com/metruption/pybark): An unofficial Python Wrapper for the Bark Partner API.
