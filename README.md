@@ -58,7 +58,7 @@ A typical error response will include the keys `success` and `error` detailing t
 ```json
 {
   "success": false,
-  "error": "Please provide a valid message"
+  "error": "Please provide a valid message",
   "error_type": "invalid_params"
 }
 ```
