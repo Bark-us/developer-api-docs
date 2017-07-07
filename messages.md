@@ -27,7 +27,7 @@ This endpoint will return `200 Success` with the JSON representation of the scor
 ###### Copy as cURL
 
 ``` shell
-curl -s -H "Content-Type: application/json" -d "{ \"message\": \"I hate you\" }" https://partner.bark.us/api/v1/messages?token=$TOKEN
+curl -s -H "Content-Type: application/json" -d "{ \"message\": \"I hate you\" }" https://www.bark.us/api/v2/developers/messages?token=$TOKEN
 ```
 
 ###### Example JSON REsponse
@@ -55,7 +55,7 @@ curl -s -H "Content-Type: application/json" -d "{ \"message\": \"I hate you\" }"
 - `success` defines the overall success of the request. If there's an errors,
     `success` will be `false` and an `error` will accompany the response (see
     [Handling
-    Errors](https://github.com/Bark-us/partner-api-docs#handling-errors) for an
+    Errors](https://github.com/Bark-us/developer-api-docs#handling-errors) for an
     example)
 - the root level `abusive` attribute will be `true` if ANY of the classifier
     features are `abusive`

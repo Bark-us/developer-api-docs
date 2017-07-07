@@ -1,20 +1,20 @@
-The Bark.us Partner API
+The Bark.us Developer API
 =======================
 
 ![Bark Logo](https://www.bark.us/bark-logo-sm.png)
 
-Welcome to the Bark.us Partner API. Looking to get messages scored for cyberbullying, profanity and sentiment? You've come to the right
+Welcome to the Bark.us Developer API. Looking to get messages scored for cyberbullying, profanity and sentiment? You've come to the right
 place!
 
 Making a request
 ----------------
 
-All URLs start with `https://partner.bark.us/api/v1/`. **HTTPS only**. If we change the API in backward-incompatible ways, we'll bump the version marker and maintain stable support for the old URLs.
+All URLs start with `https://www.bark.us/api/v2/developers/`. **HTTPS only**. If we change the API in backward-incompatible ways, we'll bump the version marker and maintain stable support for the old URLs.
 
 Please include the `Content-Type` header and the JSON data:
 
 ```shell
-curl -H 'Content-Type: application/json; charset=utf-8' -H 'X-Token-Auth: mysecrettoken' -d "{ \"message\": \"Sample message\" }" https://partner.bark.us/api/v1/messages
+curl -H 'Content-Type: application/json; charset=utf-8' -H 'X-Token-Auth: mysecrettoken' -d "{ \"message\": \"Sample message\" }" https://www.bark.us/api/v2/developers/messages
 ```
 
 Throughout this guide we've included "Copy as cURL" examples. If you'd like to try this out in your shell, export the following ENV variable:
@@ -33,7 +33,7 @@ You'll be given an access token for which you can supply in 2 ways when
 communicating with the API:
 
 1. Provide the `X-Token-Auth` header with the value being your integration token
-2. Include the query string param `token` (ie. `https://partner.bark.us/api/v1/messages?token=mysecrettoken`)
+2. Include the query string param `token` (ie. `https://www.bark.us/api/v2/developers/messages?token=mysecrettoken`)
 
 English Only (for now)
 ---------
@@ -59,6 +59,7 @@ A typical error response will include the keys `success` and `error` detailing t
 {
   "success": false,
   "error": "Please provide a valid message"
+  "error_type": "invalid_params"
 }
 ```
 
@@ -73,12 +74,12 @@ We recommend baking 429 response handling in to your HTTP handling at a low leve
 
 API endpoints
 -------------
-- [Messages](https://github.com/Bark-us/partner-api-docs/blob/master/messages.md)
+- [Messages](https://github.com/Bark-us/devoper-api-docs/blob/master/messages.md)
 
 Support
 -------
 
-If you have a specific feature request or if you found a bug, [please open a GitHub issue](https://github.com/Bark-us/partner-api-docs/issues). We encourage forking these docs for local reference, and will happily accept pull request with improvements.
+If you have a specific feature request or if you found a bug, [please open a GitHub issue](https://github.com/Bark-us/devoper-api-docs/issues). We encourage forking these docs for local reference, and will happily accept pull request with improvements.
 
 Alternatively, you can reach us via email at <help@bark.us>.
 
