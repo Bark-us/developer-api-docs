@@ -17,7 +17,7 @@ Score a message
 **Optional parameters**:
 
 * `media_url` - the public URL of a media file (photo/video) to be analyzed
-* `media` - a base64-encoded string representing the binary data of the media (photo/video) to be analyzed
+* `media` - a base64-encoded string (4 MB max) representing the binary data of the media (photo/video) to be analyzed
 
 _Note: `media_url` and `media` should not be used together. Choose one format
 or the other when requesting analysis of a message containing media._
