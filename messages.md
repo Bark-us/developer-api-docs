@@ -13,7 +13,14 @@ Score a message
 **Required parameters**:
 
 * `message` - the text content of the message to be scored
+
+**Optional parameters**:
+
 * `media_url` - the public URL of a media file (photo/video) to be analyzed
+* `media` - a base64-encoded string representing the binary data of the media (photo/video) to be analyzed
+
+_Note: `media_url` and `media` should not be used together. Choose one format
+or the other when requesting analysis of a message containing media._
 
 This endpoint will return `200 Success` with the JSON representation of the score for the provided message.
 
