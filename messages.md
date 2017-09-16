@@ -57,10 +57,6 @@ curl -s -H "Content-Type: application/json" -d "{ \"message\": \"I hate you\", \
             "image_classifier": "Google Vision API",
             "text": "rk\n"
         },
-        "sexual_content": {
-            "abusive": false,
-            "likelihood": "UNLIKELY"
-        },
         "sentiment": {
             "polarity": "VERY_NEGATIVE"
         },
@@ -100,4 +96,3 @@ curl -s -H "Content-Type: application/json" -d "{ \"message\": \"I hate you\", \
 - `severity` in the `profanity` block is an `integer` from `0` (no profanity)
     to `4` (severe profanity)
 - `context` in the `profanity` block is whether the profanity found requires context to be considered profanity
-
