@@ -57,8 +57,8 @@ A typical error response will include the keys `success` and `error` detailing t
 
 ```json
 {
-  "success": false,
-  "error": "Please provide a valid message",
+  "success":    false,
+  "error":      "Please provide a valid message",
   "error_type": "invalid_params"
 }
 ```
@@ -75,6 +75,7 @@ We recommend baking 429 response handling in to your HTTP handling at a low leve
 API endpoints
 -------------
 - [Message](https://github.com/Bark-us/developer-api-docs/blob/master/message.md)
+- [Conversation](https://github.com/Bark-us/developer-api-docs/blob/master/conversation.md)
 
 Support
 -------

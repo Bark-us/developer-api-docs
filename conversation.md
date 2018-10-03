@@ -1,10 +1,6 @@
 Conversation
 =======
 
-Endpoints:
-
-- [Classify a conversation](#score-a-conversation)
-
 Classify a conversation
 ---------------
 

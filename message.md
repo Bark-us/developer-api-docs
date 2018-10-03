@@ -1,10 +1,6 @@
 Message
 =======
 
-Endpoints:
-
-- [Classify a message](#score-a-message)
-
 Classify a message
 ---------------
 
