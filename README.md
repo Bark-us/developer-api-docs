@@ -3,18 +3,18 @@ The Bark.us Developer API
 
 ![Bark Logo](https://www.bark.us/bark-logo-sm.png)
 
-Welcome to the Bark.us Developer API. Looking to get messages scored for cyberbullying, profanity and sentiment? You've come to the right
+Welcome to the Bark.us Developer API. Looking to get messages scored for cyberbullying, depression, suicide, drug-related, hate speech, and sexual content? You've come to the right
 place!
 
 Making a request
 ----------------
 
-All URLs start with `https://www.bark.us/api/v2/developers/`. **HTTPS only**. If we change the API in backward-incompatible ways, we'll bump the version marker and maintain stable support for the old URLs.
+All URLs start with `https://www.bark.us/api/v3/developers/`. **HTTPS only**. If we change the API in backward-incompatible ways, we'll bump the version marker and maintain stable support for the old URLs.
 
 Please include the `Content-Type` header and the JSON data:
 
 ```shell
-curl -H 'Content-Type: application/json; charset=utf-8' -H 'X-Token-Auth: mysecrettoken' -d "{ \"message\": \"Sample message\" }" https://www.bark.us/api/v2/developers/messages
+curl -H 'Content-Type: application/json; charset=utf-8' -H 'X-Token-Auth: mysecrettoken' -d "{ \"message\": \"Sample message\" }" https://www.bark.us/api/v3/developers/message
 ```
 
 Throughout this guide we've included "Copy as cURL" examples. If you'd like to try this out in your shell, export the following ENV variable:
@@ -33,7 +33,7 @@ You'll be given an access token for which you can supply in 2 ways when
 communicating with the API:
 
 1. Provide the `X-Token-Auth` header with the value being your integration token
-2. Include the query string param `token` (ie. `https://www.bark.us/api/v2/developers/messages?token=mysecrettoken`)
+2. Include the query string param `token` (ie. `https://www.bark.us/api/v3/developers/message?token=mysecrettoken`)
 
 English Only (for now)
 ---------
@@ -74,7 +74,7 @@ We recommend baking 429 response handling in to your HTTP handling at a low leve
 
 API endpoints
 -------------
-- [Messages](https://github.com/Bark-us/developer-api-docs/blob/master/messages.md)
+- [Message](https://github.com/Bark-us/developer-api-docs/blob/master/message.md)
 
 Support
 -------

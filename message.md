@@ -1,14 +1,14 @@
-Messages
+Message
 =======
 
 Endpoints:
 
-- [Score a message](#score-a-message)
+- [Classify a message](#score-a-message)
 
-Score a message
+Classify a message
 ---------------
 
-* `POST /messages` will provide the score for a single message
+* `POST /message` will classify a single message with or without media
 
 **Required parameters**:
 
@@ -36,7 +36,7 @@ This endpoint will return `200 Success` with the JSON representation of the scor
 ###### Copy as cURL
 
 ``` shell
-curl -s -H "Content-Type: application/json" -d "{ \"message\": \"I hate you\", \"media_url\": \"https://www.bark.us/bark-logo.png\" }" https://www.bark.us/api/v2/developers/messages?token=$TOKEN
+curl -s -H "Content-Type: application/json" -d "{ \"message\": \"I hate you\", \"media_url\": \"https://www.bark.us/bark-logo.png\" }" https://www.bark.us/api/v3/developers/message?token=$TOKEN
 ```
 
 ###### Example JSON Response
