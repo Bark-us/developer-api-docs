@@ -1,6 +1,3 @@
-Message
-=======
-
 Classify a message
 ---------------
 
