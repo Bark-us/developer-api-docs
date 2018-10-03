@@ -5,7 +5,7 @@ Classify a message
 
 **Required parameters**:
 
-* `message` - the text content of the message to be scored
+* `message` - text content to be classified
 
 **Optional parameters**:
 

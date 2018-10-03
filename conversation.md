@@ -5,8 +5,8 @@ Classify a conversation
 
 **Required parameters for each message**:
 
-* `id` - the unique identifier for the message
-* `message` - the text content of the message to be scored
+* `id` - unique identifier for the message
+* `message` - text content of the message to be classified
 
 _Note: media classification is not available when classifying a conversation._
 
