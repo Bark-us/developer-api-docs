@@ -1,7 +1,7 @@
 Classify a message
 ---------------
 
-* `POST /message` will classify a single message with or without media
+* `POST /messages` will classify a single message with or without media
 
 **Required parameters**:
 
@@ -38,34 +38,43 @@ curl -s -H "Content-Type: application/json" -d "{ \"message\": \"I hate you\", \
 {
     "success": true,
     "abusive": false,
+    "guid": "40132b3d-cb93-4337-943b-41e4eb9d536d",
     "results": {
         "media": {
-            "media_type": "image/png",
-            "likelihood": {
-                "medical": "VERY_UNLIKELY",
-                "violence": "UNLIKELY",
-                "spoof": "VERY_UNLIKELY",
-                "adult": "VERY_UNLIKELY"
-            },
-            "image_classifier": "Google Vision API",
-            "text": "rk\n"
-        },
-        "sentiment": {
-            "polarity": "VERY_NEGATIVE"
+            "abusive": true,
+            "score": 0.71
         },
         "cyberbullying": {
             "abusive": false,
-            "likelihood": "UNLIKELY"
+            "score": 0.0
         },
         "profanity": {
-            "media_profanity": false,
-            "terms": {},
-            "severity": 0,
-            "context": true,
-            "token_count": 3,
+            "abusive": true,
+            "score": 0.89
+        },
+        "depression": {
             "abusive": false,
-            "likelihood": "VERY_UNLIKELY",
-            "user_profanity": null
+            "score": 0.0
+        },
+        "suicide": {
+            "abusive": false,
+            "score": 0.0
+        },
+        "drug_related": {
+            "abusive": false,
+            "score": 0.0
+        },
+        "hate_speech": {
+            "abusive": false,
+            "score": 0.0
+        },
+        "sexual_content": {
+            "abusive": false,
+            "score": 0.0
+        },
+        "violence": {
+            "abusive": false,
+            "score": 0.0
         }
     }
 }
@@ -84,11 +93,3 @@ curl -s -H "Content-Type: application/json" -d "{ \"message\": \"I hate you\", \
     `message` contents were positive for that feature (ie. if `abusive` is
     `true` within the `cyberbullying` block, the message was found to be
     cyberbullying)
-- `likelihood` values can be `VERY_UNLIKELY`, `UNLIKELY`,`NEUTRAL`, `LIKELY`, `VERY_LIKELY`
-- `polarity` values can be `VERY_NEGATIVE`, `NEGATIVE`, `NEUTRAL`, `POSITIVE`, `VERY_POSITIVE`
-- `severity` in the `profanity` block is an `integer` from `0` (no profanity)
-    to `4` (severe profanity)
-- `context` in the `profanity` block is whether the profanity found requires context to be considered profanity
-- the response above illustrates the default classifiers. Additional classifiers (e.g. `sexual_content`, `depression`, `drug_related`,
-    etc.) are available by special request.
-
