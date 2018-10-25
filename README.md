@@ -75,7 +75,6 @@ We recommend baking 429 response handling in to your HTTP handling at a low leve
 API endpoints
 -------------
 - [Message](https://github.com/Bark-us/developer-api-docs/blob/master/message.md)
-- [Conversation](https://github.com/Bark-us/developer-api-docs/blob/master/conversation.md)
 
 Support
 -------
