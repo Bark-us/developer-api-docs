@@ -14,7 +14,7 @@ All URLs start with `https://www.bark.us/api/v3/developers/`. **HTTPS only**. If
 Please include the `Content-Type` header and the JSON data:
 
 ```shell
-curl -H 'Content-Type: application/json; charset=utf-8' -H 'X-Token-Auth: mysecrettoken' -d "{ \"message\": \"Sample message\" }" https://www.bark.us/api/v3/developers/message
+curl -H 'Content-Type: application/json; charset=utf-8' -H 'X-Token-Auth: mysecrettoken' -d "{ \"message\": \"Sample message\" }" https://www.bark.us/api/v3/developers/messages
 ```
 
 Throughout this guide we've included "Copy as cURL" examples. If you'd like to try this out in your shell, export the following ENV variable:
@@ -33,7 +33,7 @@ You'll be given an access token for which you can supply in 2 ways when
 communicating with the API:
 
 1. Provide the `X-Token-Auth` header with the value being your integration token
-2. Include the query string param `token` (ie. `https://www.bark.us/api/v3/developers/message?token=mysecrettoken`)
+2. Include the query string param `token` (ie. `https://www.bark.us/api/v3/developers/messages?token=mysecrettoken`)
 
 English Only (for now)
 ---------
